@@ -119,7 +119,7 @@ class Horray:
                                 font=("Courier", 22, "bold"),
                                 fill=self.accent, anchor="center")
 
-        self.canvas.create_text(cvx, cvy + 20, text="Your computer is all set up now :>",
+        self.canvas.create_text(cvx, cvy + 20, text="Yur Compuitr now has virus [joke] PARTY TIME!!",
                                 font=("Courier", 14, "bold"),
                                 fill=self.text_color, anchor="center")
 
@@ -186,7 +186,7 @@ def launch_window(index):
 
 
 def main():
-    NUM_WINDOWS = 6
+    NUM_WINDOWS = 4
 
     threads = []
     for i in range(NUM_WINDOWS):
