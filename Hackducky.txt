@@ -1,190 +1,20 @@
-REM Computer auto setup [Windows]
-
-DEALAY 3000
-
-REM BEGIN
-
-DEALAY 3000
-WINDOWS 
-SCRIPT Firefox
-ENTER
-TAB TAB TAB TAB TAB TAB TAB
-REM WAIT FOR PAGE TO LOAD
-DELAY 2000
-REM MOVE TO DOWNLOAD TAB
-TAB TAB TAB TAB TAB TAB
-ENTER
-
-REM START INSTALLER
-
-WINDOWS
-SCRIPT File explorer
-ENTER
-TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB
-DOWNARROW 
-RIGHTARROW
+GUI r
+DELAY 250
+STRING powershell
 ENTER
 DELAY 500
-DOWNARROW 
-ENTER
-
-ALT + TAB
-RIGHTARROW RIGHTARROW RIGHTARROW 
-ENTER
-TAB TAB 
-ENTER
-
-DELAY 20000
-
-ALT + TAB 
-TAB TAB TAB 
-ENTER
-ENTER
-TAB TAB TAB TAB TAB
-ENTER
-DELAY 750
-TAB TAB TAB TAB TAB
-ENTER
-ALT + F4
-
-TAB TAB TAB TAB TAB 
-ENTER 
-
+REM opened powershell moving to python download
 DELAY 500
-TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB 
-DOWNARROW
-TAB TAB 
-ENTER
-DELAY 500
-TAB TAB TAB TAB TAB TAB TAB TAB
-ENTER
-DELAY 500
-TAB TAB 
-ENTER
-ALT + F4
-
-REM START DOWNLOADING NESSESARY APPS
-
-STRING vs code
-ENTER
-
-DELAY 2000
-REM Google terms and whatnot
-TAB TAB TAB TAB TAB 
-ENTER
-REM tab x 29 for navigation
-TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB 
-ENTER
-DELAY 10000
-REM TABx21 move to download option
-TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB
-ENTER
-
-DELAY 10000
-
-ALT + TAB
-DOWNARROW
+STRING winget install Python.Python.3.9
 ENTER
 DELAY 5000
-
-TAB TAB TAB TAB 
-UPARROW
-TAB 
-ENTER
-ENTER 
-ENTER
-ENTER 
-ENTER
-ENTER 
-REM ALLOW VS CODE TO INSTALL
-DELAY 30000
-
-ENTER 
-
-TAB 
-TAB 
-TAB 
-TAB 
-TAB 
-TAB 
-TAB 
-TAB 
-DOWNARROW 
-DOWNARROW 
-DOWNARROW 
-DOWNARROW
-ENTER 
-
-SCRIPT wakatime
-ENTER 
-
-DELAY 250
-
-TAB TAB 
-DOWNARROW 
-ENTER 
-REM Finess way to install button
-TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB TAB 
-ENTER
-REM accept agreements
-TAB TAB TAB TAB TAB 
-ENTER 
-
-ALT + TAB
-ALT + F4
-ALT + F4
-ALT + F4
-ALT + F4
-
-REM Close all windows
-
-
-
-GUI r
-DELAY 250
-SCRIPT powershell
-DELAY 500
-SCRIPT winget search Python.Python
-ENTER
-DELAY 750
-ENTER
-
-REM this should install python so our thing can work
-
-DELAY 500
-SCRIPT winget install Python.Python.3.9
-DELAY 1500
+REM make sure that python downloads sucessfuly
 TAB
 ENTER
-DELAY 2500
-REM wait for python to install
-
-
-DELAY 500
-
-SCRIPT $url = "https://raw.githubusercontent.com/Lolpi31415/Hackduckyformangos/refs/heads/main/setupfinish.py"
-SHIFT + ENTER
-SCRIPT $output = "C:\Users\" 
-TAB
-SCRIPT \Desktop\setupfinish.py"
-SHIFT + ENTER
-SCRIPT Invoke-WebRequest -Uri $url -OutFile $output
+STRING $url = "https://raw.githubusercontent.com/Lolpi31415/Hackduckyformangos/refs/heads/main/setupfinish.py"; $output = "C:\Users\$env:USERNAME\Desktop\setupfinish.py"; Invoke-WebRequest -Uri $url -OutFile $output
 ENTER
-
-
 DELAY 1000
-
-SCRIPT cd Desktop
+STRING cd downloads
 ENTER
-SCRIPT python setupfinish.py
+STRING python setupfinish.py
 ENTER
-
-
-GUI r
-DELAY 250
-SCRIPT notepad
-ENTER 
-DELAY 500
-SCRIPT Your computer is all set up with: -Firefox -VS code -Wakatime, all you need to do know is signin to your hackclub slack and configure Wakatime, have fun!
-
-
